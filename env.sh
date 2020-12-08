@@ -1,1 +1,1 @@
-export R2PM_DBDIR="$PWD/db"
+export RZPM_DBDIR="$PWD/db"
