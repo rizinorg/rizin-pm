@@ -1,18 +1,18 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-extras"
-R2PM_DESC "[symbolic] Triton based R2 plugin for concolic execution and total control"
+RZPM_GIT "https://github.com/radareorg/radare2-extras"
+RZPM_DESC "[symbolic] Triton based RZ plugin for concolic execution and total control"
 
-PIMPDIR="${R2PM_PLUGDIR}/pimp"
+PIMPDIR="${RZPM_PLUGDIR}/pimp"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	cd pimp
 	mkdir -p "${PIMPDIR}"
 	cp *.py ${PIMPDIR}
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	rm -rf "${PIMPDIR}"
 }
 
-R2PM_END
+RZPM_END

@@ -1,20 +1,20 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
 VV="0.50.2"
 SV="$(echo ${VV}|cut -d . -f 1,2)"
 
-R2PM_TGZ "http://download.gnome.org/sources/vala/${SV}/vala-${VV}.tar.xz"
-R2PM_DESC "[syspkg] Vala compiler from git"
+RZPM_TGZ "http://download.gnome.org/sources/vala/${SV}/vala-${VV}.tar.xz"
+RZPM_DESC "[syspkg] Vala compiler from git"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 #	valac --help > /dev/null 2>&1 && exit 0
-	./configure --prefix="${R2PM_PREFIX}"
+	./configure --prefix="${RZPM_PREFIX}"
 	${MAKE} -j4
 	${MAKE} install
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	${MAKE} uninstall
 }
 
-R2PM_END
+RZPM_END

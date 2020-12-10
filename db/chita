@@ -1,22 +1,22 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/jpenalbae/chita"
-R2PM_DESC "[r2-r2pipe-node] Exploiting helper"
+RZPM_GIT "https://github.com/jpenalbae/chita"
+RZPM_DESC "[r2-r2pipe-node] Exploiting helper"
 
-BINDIR="${R2PM_BINDIR}"
+BINDIR="${RZPM_BINDIR}"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	node --version || exit 1
 	npm install || exit 1
-	mkdir -p "${R2PM_BINDIR}" || exit 1
-	echo '#!/bin/sh' > "${R2PM_BINDIR}/chita" || exit 1
-	echo "exec node '`pwd`'"'/chita.js $*' >> "${R2PM_BINDIR}/chita" || exit 1
-	chmod +x "${R2PM_BINDIR}"/chita || exit 1
+	mkdir -p "${RZPM_BINDIR}" || exit 1
+	echo '#!/bin/sh' > "${RZPM_BINDIR}/chita" || exit 1
+	echo "exec node '`pwd`'"'/chita.js $*' >> "${RZPM_BINDIR}/chita" || exit 1
+	chmod +x "${RZPM_BINDIR}"/chita || exit 1
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	rm -f "${BINDIR}"/chita
-	rm -rf "${R2PM_GITDIR}"/chita
+	rm -rf "${RZPM_GITDIR}"/chita
 }
 
-R2PM_END
+RZPM_END

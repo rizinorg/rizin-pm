@@ -1,14 +1,14 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/fxfactorial/ocaml-radare2"
-R2PM_DESC "[r2pipe] r2pipe API for OCaml"
+RZPM_GIT "https://github.com/fxfactorial/ocaml-radare2"
+RZPM_DESC "[r2pipe] r2pipe API for OCaml"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	opam install radare2
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	opam uninstall radare2
 }
 
-R2PM_END
+RZPM_END

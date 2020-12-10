@@ -1,17 +1,17 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/raimue/avarice"
-R2PM_DESC "[syspkg] avarice - gdbserver bridge the avr jtag"
+RZPM_GIT "https://github.com/raimue/avarice"
+RZPM_DESC "[syspkg] avarice - gdbserver bridge the avr jtag"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	./Bootstrap || exit 1
-	./configure --prefix="${R2PM_PREFIX}" || exit 1
+	./configure --prefix="${RZPM_PREFIX}" || exit 1
 	${MAKE} -j 4 || exit -1
 	${MAKE} install || exit 1
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	${MAKE} uninstall || exit 1
 }
 
-R2PM_END
+RZPM_END

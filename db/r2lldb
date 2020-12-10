@@ -1,14 +1,14 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/nowsecure/r2lldb"
-R2PM_DESC "[r2lldb] lldb as backend for r2"
+RZPM_GIT "https://github.com/nowsecure/r2lldb"
+RZPM_DESC "[r2lldb] lldb as backend for r2"
 
-R2PM_INSTALL() {
-	${MAKE} install PYPATH="${R2PM_PYPATH}" PREFIX="${R2PM_PREFIX}" || exit 1
+RZPM_INSTALL() {
+	${MAKE} install PYPATH="${RZPM_PYPATH}" PREFIX="${RZPM_PREFIX}" || exit 1
 }
 
-R2PM_UNINSTALL() {
-	${MAKE} uninstall PYPATH="${R2PM_PYPATH}" PREFIX="${R2PM_PREFIX}" || exit 1
+RZPM_UNINSTALL() {
+	${MAKE} uninstall PYPATH="${RZPM_PYPATH}" PREFIX="${RZPM_PREFIX}" || exit 1
 }
 
-R2PM_END
+RZPM_END

@@ -1,18 +1,18 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-extras"
-R2PM_DESC "[r2-core] yara plugin for radare2"
+RZPM_GIT "https://github.com/radareorg/radare2-extras"
+RZPM_DESC "[r2-core] yara plugin for radare2"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	cd yara/yara
 	export EXT_SO=$(r2 -hh|grep LIBEXT|awk '{print $2}')
-	./configure --prefix="${R2PM_PREFIX}" || R2PM_FAIL "Configure"
-	${MAKE} || R2PM_FAIL "Build"
-	${MAKE} install || R2PM_FAIL "Install"
+	./configure --prefix="${RZPM_PREFIX}" || RZPM_FAIL "Configure"
+	${MAKE} || RZPM_FAIL "Build"
+	${MAKE} install || RZPM_FAIL "Install"
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	${MAKE} uninstall
 }
 
-R2PM_END
+RZPM_END

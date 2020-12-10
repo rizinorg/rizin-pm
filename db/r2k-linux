@@ -1,9 +1,9 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-extras"
-R2PM_DESC "[r2-io] r2k Linux kernel module"
+RZPM_GIT "https://github.com/radareorg/radare2-extras"
+RZPM_DESC "[r2-io] r2k Linux kernel module"
 
-R2PM_DOC="
+RZPM_DOC="
 You should now be able to run:
 
   $ sudo modprobe r2kmod
@@ -12,23 +12,23 @@ WARNING: This module allows ANY user to read/write physical memory
 WARNING: Dont use it if you dont know what you are doing
 "
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	cd r2k/linux
-	${MAKE} || R2PM_FAIL "Build"
-	#gzip -f r2kmod.ko || R2PM_FAIL "GZIP error"
+	${MAKE} || RZPM_FAIL "Build"
+	#gzip -f r2kmod.ko || RZPM_FAIL "GZIP error"
 	if [ "${GLOBAL}" = 1 ]; then
-		#${MAKE} install || R2PM_FAIL "Install"
-		sudo mkdir -p /lib/modules/$(uname -r)/kernel/drivers/misc/ || R2PM_FAIL "Cannot create install dir"
-		#sudo cp -f r2kmod.ko.gz /lib/modules/$(uname -r)/kernel/drivers/misc/ || R2PM_FAIL "Permission denied"
-		sudo cp -f r2kmod.ko /lib/modules/$(uname -r)/kernel/drivers/misc/ || R2PM_FAIL "Permission denied"
+		#${MAKE} install || RZPM_FAIL "Install"
+		sudo mkdir -p /lib/modules/$(uname -r)/kernel/drivers/misc/ || RZPM_FAIL "Cannot create install dir"
+		#sudo cp -f r2kmod.ko.gz /lib/modules/$(uname -r)/kernel/drivers/misc/ || RZPM_FAIL "Permission denied"
+		sudo cp -f r2kmod.ko /lib/modules/$(uname -r)/kernel/drivers/misc/ || RZPM_FAIL "Permission denied"
 		sudo depmod -a
 		r2pm_doc r2k-linux
 	else
-		sudo insmod r2kmod.ko || R2PM_FAIL "Cannot install kernel module"
+		sudo insmod r2kmod.ko || RZPM_FAIL "Cannot install kernel module"
 	fi
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	if [ "${GLOBAL}" = 1 ]; then
 		sudo rm -f /lib/modules/$(uname -r)/kernel/drivers/misc/r2k*.ko*
 	fi
@@ -36,4 +36,4 @@ R2PM_UNINSTALL() {
 	#${MAKE} uninstall
 }
 
-R2PM_END
+RZPM_END

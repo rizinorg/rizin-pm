@@ -1,17 +1,17 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/anestisb/vdexExtractor"
-R2PM_DESC "[app] verified dex extractor tool from oat files"
+RZPM_GIT "https://github.com/anestisb/vdexExtractor"
+RZPM_DESC "[app] verified dex extractor tool from oat files"
 
-BINDIR="${R2PM_BINDIR}"
+BINDIR="${RZPM_BINDIR}"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	sh make.sh || exit 1
-	ln -fs "${PWD}/bin/vdexExtractor" "${R2PM_BINDIR}/vdexExtractor"
+	ln -fs "${PWD}/bin/vdexExtractor" "${RZPM_BINDIR}/vdexExtractor"
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	rm -f "${BINDIR}"/vdexExtractor
 }
 
-R2PM_END
+RZPM_END

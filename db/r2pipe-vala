@@ -1,10 +1,10 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-r2pipe"
-R2PM_DESC "[r2pipe] API for Vala and C-Glib"
+RZPM_GIT "https://github.com/radareorg/radare2-r2pipe"
+RZPM_DESC "[r2pipe] API for Vala and C-Glib"
 
-R2PM_INSTALL() {
-	./configure --prefix="${R2PM_PREFIX}" || exit 1
+RZPM_INSTALL() {
+	./configure --prefix="${RZPM_PREFIX}" || exit 1
 	cd vala || exit 1
 	if [ "${GLOBAL}" = 1 ]; then
 		${MAKE} clean
@@ -16,7 +16,7 @@ R2PM_INSTALL() {
 	fi
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	if [ "${GLOBAL}" = 1 ]; then
 		${MAKE} uninstall
 	else
@@ -25,4 +25,4 @@ R2PM_UNINSTALL() {
 	fi
 }
 
-R2PM_END
+RZPM_END

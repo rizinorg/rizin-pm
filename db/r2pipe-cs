@@ -1,9 +1,9 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-r2pipe"
-R2PM_DESC "[r2pipe] API for C# and .Net"
+RZPM_GIT "https://github.com/radareorg/radare2-r2pipe"
+RZPM_DESC "[r2pipe] API for C# and .Net"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	cd dotnet
 	if [ "${GLOBAL}" = 1 ]; then
 		echo "Cannot install global dll yet"
@@ -15,7 +15,7 @@ R2PM_INSTALL() {
 	fi
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	if [ "${GLOBAL}" = 1 ]; then
 		echo "Cannot uninstall global dll yet"
 		exit 1
@@ -24,4 +24,4 @@ R2PM_UNINSTALL() {
 	fi
 }
 
-R2PM_END
+RZPM_END

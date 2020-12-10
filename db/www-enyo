@@ -1,15 +1,15 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radare/radare2-webui"
-R2PM_DESC "[r2-www] The enyo WebUI of /m"
+RZPM_GIT "https://github.com/radare/radare2-webui"
+RZPM_DESC "[r2-www] The enyo WebUI of /m"
 
 MAKE_TARGET="release-enyo"
 UI="enyo"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	${MAKE} "${MAKE_TARGET}" || exit 1
 	cd "dist/${UI}" || exit 1
-	WWWROOT="${R2PM_WWWROOT}"
+	WWWROOT="${RZPM_WWWROOT}"
 	echo "WWWROOT IS ${WWWROOT}"
 	mkdir -p ${WWWROOT} || exit 1
 	if [ -n "${WWWROOT}" ]; then
@@ -22,8 +22,8 @@ R2PM_INSTALL() {
 	fi
 }
 
-R2PM_UNINSTALL() {
-	WWWROOT="${R2PM_WWWROOT}"
+RZPM_UNINSTALL() {
+	WWWROOT="${RZPM_WWWROOT}"
 	if [ -n "${WWWROOT}" ]; then
 		rm -rf "${WWWROOT}/${UI}"
 	else
@@ -32,4 +32,4 @@ R2PM_UNINSTALL() {
 	fi
 }
 
-R2PM_END
+RZPM_END

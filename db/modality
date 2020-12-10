@@ -1,17 +1,17 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/chase1635321/Modality"
-R2PM_DESC "[modality] Plugin to integrate angr with radare2"
+RZPM_GIT "https://github.com/chase1635321/Modality"
+RZPM_DESC "[modality] Plugin to integrate angr with radare2"
 
-R2PM_INSTALL() {
-	${R2PM_SUDO} cp -f plugin.py "${R2PM_PLUGDIR}" || exit 1
+RZPM_INSTALL() {
+	${RZPM_SUDO} cp -f plugin.py "${RZPM_PLUGDIR}" || exit 1
 	echo Adding src to PYTHONPATH
-	echo export PYTHONPATH=${R2PM_GITDIR}Modality/src:$PYTHONPATH >> ~/.bashrc
-	export PYTHONPATH=${R2PM_GITDIR}Modality/src:$PYTHONPATH
+	echo export PYTHONPATH=${RZPM_GITDIR}Modality/src:$PYTHONPATH >> ~/.bashrc
+	export PYTHONPATH=${RZPM_GITDIR}Modality/src:$PYTHONPATH
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_PLUGDIR}/"plugin.py
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_PLUGDIR}/"plugin.py
 }
 
-R2PM_END
+RZPM_END

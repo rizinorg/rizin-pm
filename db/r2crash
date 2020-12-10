@@ -1,17 +1,17 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-extras"
-R2PM_DESC "[util] crashlog parser"
+RZPM_GIT "https://github.com/radareorg/radare2-extras"
+RZPM_DESC "[util] crashlog parser"
 
-R2PM_INSTALL() {
-	F=${R2PM_BINDIR}/r2crash
+RZPM_INSTALL() {
+	F=${RZPM_BINDIR}/r2crash
 	ln -fs ${PWD}/crashlog/r2crash.js $F
 	chmod +x $F
 }
 
-R2PM_UNINSTALL() {
-	F=${R2PM_BINDIR}/r2crash
+RZPM_UNINSTALL() {
+	F=${RZPM_BINDIR}/r2crash
 	rm -f "$F"
 }
 
-R2PM_END
+RZPM_END

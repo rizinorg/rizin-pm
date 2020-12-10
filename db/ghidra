@@ -1,24 +1,24 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_DESC "[app] ghidra"
+RZPM_DESC "[app] ghidra"
 
 GHIDRA_VERSION=9.2_PUBLIC
 GHIDRA_URL="https://ghidra-sre.org/ghidra_${GHIDRA_VERSION}_20201113.zip"
-R2PM_TGZ ${GHIDRA_URL} "ghidra_${GHIDRA_VERSION}"
+RZPM_TGZ ${GHIDRA_URL} "ghidra_${GHIDRA_VERSION}"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	echo "Installing Ghidra"
 	cd ghidra_${GHIDRA_VERSION}
 	( ln -fs ghidra_${GHIDRA_VERSION} ../ghidra )
-	mkdir -p "${R2PM_BINDIR}"
-	ln -fs "${PWD}/ghidraRun" "${R2PM_BINDIR}/ghidraRun"
-	ln -fs "${PWD}/support/analyzeHeadless" "${R2PM_BINDIR}/analyzeHeadless"
-	echo "Now you have ghidraRun and analyzeHeadless in the R2PM_PATH. Enjoy"
+	mkdir -p "${RZPM_BINDIR}"
+	ln -fs "${PWD}/ghidraRun" "${RZPM_BINDIR}/ghidraRun"
+	ln -fs "${PWD}/support/analyzeHeadless" "${RZPM_BINDIR}/analyzeHeadless"
+	echo "Now you have ghidraRun and analyzeHeadless in the RZPM_PATH. Enjoy"
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_BINDIR}"/ghidraRun
-	rm -f "${R2PM_BINDIR}"/analyzeHeadless
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_BINDIR}"/ghidraRun
+	rm -f "${RZPM_BINDIR}"/analyzeHeadless
 }
 
-R2PM_END
+RZPM_END

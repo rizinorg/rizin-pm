@@ -1,14 +1,14 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_DESC "[r2pipe] r2pipe API for Java"
-R2PM_GIT "https://github.com/radareorg/radare2-r2pipe"
+RZPM_DESC "[r2pipe] r2pipe API for Java"
+RZPM_GIT "https://github.com/radareorg/radare2-r2pipe"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	cd java || exit 1
 	${MAKE} || exit 1
-	cp -f r2pipe.jar "${R2PM_OLDPWD}" || exit 1
+	cp -f r2pipe.jar "${RZPM_OLDPWD}" || exit 1
 }
 
-R2PM_UNINSTALL() {} # nothing to do here
+RZPM_UNINSTALL() {} # nothing to do here
 
-R2PM_END
+RZPM_END

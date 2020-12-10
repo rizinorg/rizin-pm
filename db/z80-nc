@@ -1,19 +1,19 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-extras"
-R2PM_DESC "[r2-arch] Z80 assembler and disassembler non-GPL"
+RZPM_GIT "https://github.com/radareorg/radare2-extras"
+RZPM_DESC "[r2-arch] Z80 assembler and disassembler non-GPL"
 
-R2PM_INSTALL() {
-	./configure --prefix="${R2PM_PREFIX}" || exit 1
+RZPM_INSTALL() {
+	./configure --prefix="${RZPM_PREFIX}" || exit 1
 	cd libr/asm/p
 	${MAKE} clean
 	${MAKE} asm_z80_nc.${LIBEXT} || exit 1
-	cp -f asm_z80_nc.${LIBEXT} "${R2PM_PLUGDIR}" || exit 1
-	echo "cp -f asm_z80_nc.${LIBEXT} ${R2PM_PLUGDIR}"
+	cp -f asm_z80_nc.${LIBEXT} "${RZPM_PLUGDIR}" || exit 1
+	echo "cp -f asm_z80_nc.${LIBEXT} ${RZPM_PLUGDIR}"
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_PLUGDIR}/asm_z80_nc."*
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_PLUGDIR}/asm_z80_nc."*
 }
 
-R2PM_END
+RZPM_END

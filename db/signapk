@@ -1,25 +1,25 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_DESC "[app] signapk"
+RZPM_DESC "[app] signapk"
 
-R2PM_GIT https://github.com/techexpertize/SignApk
+RZPM_GIT https://github.com/techexpertize/SignApk
 
-R2PM_INSTALL() {
-	mkdir -p "${R2PM_BINDIR}"
-	B="${R2PM_BINDIR}/signapk"
+RZPM_INSTALL() {
+	mkdir -p "${RZPM_BINDIR}"
+	B="${RZPM_BINDIR}/signapk"
 	echo '#!/bin/sh' > $B
-	echo "java -jar \"${R2PM_USRDIR}/git/SignApk/signapk.jar\" $@" >> $B
+	echo "java -jar \"${RZPM_USRDIR}/git/SignApk/signapk.jar\" $@" >> $B
 	chmod +x $B
 	#
-	B="${R2PM_BINDIR}/signapk2"
+	B="${RZPM_BINDIR}/signapk2"
 	echo '#!/bin/sh' > $B
-	echo "java -jar \"${R2PM_USRDIR}/git/SignApk/signapk.jar\" \"$PWD/certificate.pem\" \"$PWD/key.pk8\" "'$@' >> $B
+	echo "java -jar \"${RZPM_USRDIR}/git/SignApk/signapk.jar\" \"$PWD/certificate.pem\" \"$PWD/key.pk8\" "'$@' >> $B
 	chmod +x $B
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_BINDIR}"/signapk
-	rm -f "${R2PM_BINDIR}"/signapk2
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_BINDIR}"/signapk
+	rm -f "${RZPM_BINDIR}"/signapk2
 }
 
-R2PM_END
+RZPM_END

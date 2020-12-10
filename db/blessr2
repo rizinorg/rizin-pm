@@ -1,11 +1,11 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-extras"
-R2PM_DESC "[tui-node] Bless-based radare2 TUI"
+RZPM_GIT "https://github.com/radareorg/radare2-extras"
+RZPM_DESC "[tui-node] Bless-based radare2 TUI"
 
-BINDIR="${R2PM_PLUGDIR}/../bin"
+BINDIR="${RZPM_PLUGDIR}/../bin"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	cd blessr2
 	node --version || exit 1
 	npm install || exit 1
@@ -16,8 +16,8 @@ R2PM_INSTALL() {
 	echo "Include ${BINDIR} in your PATH"
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	rm -f "${BINDIR}"/blessr2
 }
 
-R2PM_END
+RZPM_END

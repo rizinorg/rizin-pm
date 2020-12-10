@@ -1,9 +1,9 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/securisec/r2retdec"
-R2PM_DESC "[r2retdec] Use local opensource retdec to decompile functions"
+RZPM_GIT "https://github.com/securisec/r2retdec"
+RZPM_DESC "[r2retdec] Use local opensource retdec to decompile functions"
 
-R2PM_DOC="
+RZPM_DOC="
 usage: $r2retdec [-h] [-p] [-t FILE]
 
 r2retdec help
@@ -16,24 +16,24 @@ Optional arguments:
 Invoke from inside r2 shell with $dec
 "
 
-R2PM_INSTALL() {
-	cd ${R2PM_GITDIR}/r2retdec
+RZPM_INSTALL() {
+	cd ${RZPM_GITDIR}/r2retdec
 	npm install || exit 1
 	cd -
 	echo "Usage: #!pipe r2retdec"
 	echo " - Open the file: r2 -A /bin/ls"
 	echo " - Type: #!pipe r2retdec"
 	echo "Function must be analyzed to get be able to decompile it"
-	ln -fs "${R2PM_GITDIR}/r2retdec/r2retdec.js" "${R2PM_BINDIR}/r2retdec"
-	chmod +x "${R2PM_GITDIR}/r2retdec/r2retdec.js"
-	if [ -x "${R2PM_GITDIR}/retdec/bin/retdec-decompiler.py" ]; then
-		echo "${R2PM_GITDIR}/retdec/bin/retdec-decompiler.py" > ~/.r2retdec
+	ln -fs "${RZPM_GITDIR}/r2retdec/r2retdec.js" "${RZPM_BINDIR}/r2retdec"
+	chmod +x "${RZPM_GITDIR}/r2retdec/r2retdec.js"
+	if [ -x "${RZPM_GITDIR}/retdec/bin/retdec-decompiler.py" ]; then
+		echo "${RZPM_GITDIR}/retdec/bin/retdec-decompiler.py" > ~/.r2retdec
 	fi
 }
 
-R2PM_UNINSTALL() {
-	#rm -rf "${R2PM_GITDIR}"/r2retdec
-	rm -f "${R2PM_BINDIR}"/r2retdec
+RZPM_UNINSTALL() {
+	#rm -rf "${RZPM_GITDIR}"/r2retdec
+	rm -f "${RZPM_BINDIR}"/r2retdec
 }
 
-R2PM_END
+RZPM_END
