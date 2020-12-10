@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT https://github.com/radareorg/cutter
-RZPM_DESC "[gui] C++/Qt GUI for radare2"
+RZPM_GIT https://github.com/rizinorg/cutter
+RZPM_DESC "[gui] C++/Qt GUI for rizin"
 
 RZPM_INSTALL() {
 	QT_PATH="$HOME/Qt/5.6/clang_64/bin/:$HOME/Qt/5.6/gcc_64/bin/"

@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2"
+RZPM_GIT "https://github.com/rizinorg/rizin"
 RZPM_DESC "[syspkg] SWIG compiler"
 RZPM_TGZ https://github.com/swig/swig/archive/rel-3.0.12.tar.gz swig-rel-3.0.12
 

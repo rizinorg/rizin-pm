@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/mrmacete/r2scripts"
-RZPM_DESC "[r2-r2pipe-python] Burn asm.emu results in real comments (MIPS oriented)"
+RZPM_GIT "https://github.com/mrmacete/rzscripts"
+RZPM_DESC "[rz-rzpipe-python] Burn asm.emu results in real comments (MIPS oriented)"
 
 RZPM_INSTALL() {
 	mkdir -p "${RZPM_ETCD}" || exit 1

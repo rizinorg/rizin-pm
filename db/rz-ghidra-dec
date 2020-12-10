@@ -1,0 +1,24 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rzghidra-dec"
+RZPM_DESC "[rz-core] Ghidra Decompiler Plugin"
+
+RZPM_DOC=""
+
+RZPM_INSTALL() {
+	git submodule init && git submodule update || exit 1
+	rm -rf build # clean build
+	mkdir -p build && cd build || exit 1
+	cmake -DRADARE2_INSTALL_PLUGDIR="${RZPM_PLUGDIR}" .. || exit 1
+	${MAKE} -j4 || exit 1
+	${MAKE} install || exit 1
+}
+
+RZPM_UNINSTALL() {
+	cd build || exit 1
+	rm -rf build
+	cat install_manifest.txt | xargs rm -rv
+	rm -r "${RZPM_PLUGDIR}/rzghidra_sleigh"
+}
+
+RZPM_END

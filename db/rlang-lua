@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-rlang"
-RZPM_DESC "[rlang] Lua r2pipe/RLang plugin"
+RZPM_GIT "https://github.com/rizinorg/rizin-rlang"
+RZPM_DESC "[rlang] Lua rzpipe/RLang plugin"
 
 RZPM_INSTALL() {
 	./configure --prefix="${RZPM_PREFIX}" || exit 1

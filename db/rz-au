@@ -1,0 +1,16 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/radare/rizin-au"
+RZPM_DESC "Audio support for rizin"
+
+RZPM_INSTALL() {
+	${MAKE} clean
+	${MAKE} || exit 1
+	${MAKE} install RZPM_PLUGDIR="${RZPM_PLUGDIR}" || exit 1
+}
+
+RZPM_UNINSTALL() {
+	${MAKE} uninstall
+}
+
+RZPM_END

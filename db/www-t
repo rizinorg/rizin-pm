@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radare/radare2-webui"
-RZPM_DESC "[r2-www] The tiled WebUI of /t"
+RZPM_GIT "https://github.com/radare/rizin-webui"
+RZPM_DESC "[rz-www] The tiled WebUI of /t"
 
 MAKE_TARGET="release-tiles"
 UI="t"

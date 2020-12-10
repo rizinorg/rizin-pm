@@ -1,0 +1,20 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-bindings"
+RZPM_DESC "[syspkg] Native Lua SWIG bindings"
+# RZPM_DEPS valabind lua-lib
+
+RZPM_INSTALL() {
+	./configure --prefix="${RZPM_PREFIX}" --enable=lua || exit 1
+	cd lua || exit 1
+	${MAKE} clean
+	${MAKE} -j ${RZPM_JOBS} || exit 1
+	${RZPM_SUDO} ${MAKE} -j${RZPM_JOBS} install-lua || exit 1
+}
+
+RZPM_UNINSTALL() {
+	cd build || exit 1
+	${RZPM_SUDO} ${MAKE} uninstall
+}
+
+RZPM_END

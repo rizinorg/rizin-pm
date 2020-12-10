@@ -1,0 +1,27 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/securisec/rzmsdn"
+RZPM_DESC "[rzmsdn] annotate PE/COFF Windows function arguments and built in help"
+
+RZPM_DOC="
+usage: $rzmsdn [-h] [-v] [-i INFO]
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -v          Verbose mode
+  -i INFO     Show info about a function
+
+Invoke from inside rz shell with $rzmsdn
+"
+
+RZPM_INSTALL() {
+    tar xf ${RZPM_GITDIR}/rzmsdn/rzmsdn.tar.gz -C ${RZPM_GITDIR}rzmsdn
+	echo '$'rzmsdn="#"'!'"pipe python ${RZPM_GITDIR}/rzmsdn/rzmsdn.py" >> ~/.rizinrc || exit 1
+	echo "\n[+] rzmsdn has been installed"
+}
+
+RZPM_UNINSTALL() {
+	rm -rf "${RZPM_GITDIR}"/rzmsdn
+}
+
+RZPM_END

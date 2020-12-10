@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radare/radare2-rust"
+RZPM_GIT "https://github.com/radare/rizin-rust"
 RZPM_DESC "[rust] a3a - full program analysis in Rust (by defragger)"
 
 RZPM_INSTALL() {

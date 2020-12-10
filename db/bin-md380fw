@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-extras"
-RZPM_DESC "[r2-bin] Load md380 firmware images"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-bin] Load md380 firmware images"
 
 RZPM_INSTALL() {
 	${MAKE} -C md380/bin-fw || exit 1

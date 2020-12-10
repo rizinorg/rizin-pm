@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-extras"
-RZPM_DESC "[r2-fs] read-only SquashFS read support"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-fs] read-only SquashFS read support"
 
 RZPM_INSTALL() {
 	./configure --prefix="${RZPM_PREFIX}" || exit 1
@@ -10,7 +10,7 @@ RZPM_INSTALL() {
 }
 
 RZPM_UNINSTALL() {
-	cd `r2 -H USER_PLUGINS` && rm -f fs_squash*
+	cd `rz -H USER_PLUGINS` && rm -f fs_squash*
 }
 
 RZPM_END

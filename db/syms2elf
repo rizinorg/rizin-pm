@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_GIT "https://github.com/danigargu/ida-syms2elf"
-RZPM_DESC "[r2-r2pipe-python] Export recognized symbols to the ELF symbol table"
+RZPM_DESC "[rz-rzpipe-python] Export recognized symbols to the ELF symbol table"
 
 RZPM_INSTALL() {
 	mkdir -p "${RZPM_ETCD}"

@@ -9,11 +9,11 @@ RZPM_INSTALL() {
 	ls
 	python setup.py build
 	sudo python setup.py install
-	ln -fs ${PWD}/ext/radare2/r2_find.py ${RZPM_BINDIR}/r2sibyl
+	ln -fs ${PWD}/ext/rizin/rz_find.py ${RZPM_BINDIR}/rzsibyl
 }
 
 RZPM_UNINSTALL() {
-	rm -f ${RZPM_BINDIR}/r2sibyl
+	rm -f ${RZPM_BINDIR}/rzsibyl
 	sudo python setup.py uninstall
 }
 

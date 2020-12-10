@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-extras"
-RZPM_DESC "[r2-arch] MSIL disassembler (wip)"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-arch] MSIL disassembler (wip)"
 
 RZPM_INSTALL() {
 	#export PKG_CONFIG_PATH=/usr/lib/pkgconfig

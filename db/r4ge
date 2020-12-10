@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_GIT "https://github.com/gast04/r4ge"
-RZPM_DESC "[r2-angr] R4GE is another r2-angr plugin"
+RZPM_DESC "[rz-angr] R4GE is another rz-angr plugin"
 
 RZPM_INSTALL() {
 	pip install -r requirements.txt

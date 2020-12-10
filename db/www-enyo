@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radare/radare2-webui"
-RZPM_DESC "[r2-www] The enyo WebUI of /m"
+RZPM_GIT "https://github.com/radare/rizin-webui"
+RZPM_DESC "[rz-www] The enyo WebUI of /m"
 
 MAKE_TARGET="release-enyo"
 UI="enyo"

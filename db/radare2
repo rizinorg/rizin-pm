@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2"
-RZPM_DESC "[pkg] radare2 symstall"
+RZPM_GIT "https://github.com/rizinorg/rizin"
+RZPM_DESC "[pkg] rizin symstall"
 
 RZPM_INSTALL() {
 	if [ "${GLOBAL}" = 1 ]; then

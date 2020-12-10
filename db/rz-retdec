@@ -1,0 +1,39 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/securisec/rzretdec"
+RZPM_DESC "[rzretdec] Use local opensource retdec to decompile functions"
+
+RZPM_DOC="
+usage: $rzretdec [-h] [-p] [-t FILE]
+
+rzretdec help
+
+Optional arguments:
+  -h, --help  Show this help message and exit.
+  -t TMP      Set temp file for decompiled code
+  -p          Print decompilation to stdout
+
+Invoke from inside rz shell with $dec
+"
+
+RZPM_INSTALL() {
+	cd ${RZPM_GITDIR}/rzretdec
+	npm install || exit 1
+	cd -
+	echo "Usage: #!pipe rzretdec"
+	echo " - Open the file: rz -A /bin/ls"
+	echo " - Type: #!pipe rzretdec"
+	echo "Function must be analyzed to get be able to decompile it"
+	ln -fs "${RZPM_GITDIR}/rzretdec/rzretdec.js" "${RZPM_BINDIR}/rzretdec"
+	chmod +x "${RZPM_GITDIR}/rzretdec/rzretdec.js"
+	if [ -x "${RZPM_GITDIR}/retdec/bin/retdec-decompiler.py" ]; then
+		echo "${RZPM_GITDIR}/retdec/bin/retdec-decompiler.py" > ~/.rzretdec
+	fi
+}
+
+RZPM_UNINSTALL() {
+	#rm -rf "${RZPM_GITDIR}"/rzretdec
+	rm -f "${RZPM_BINDIR}"/rzretdec
+}
+
+RZPM_END

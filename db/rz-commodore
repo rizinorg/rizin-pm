@@ -1,0 +1,20 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/thestr4ng3r/rzcommodore.git"
+RZPM_DESC "[rz-arch] CBM Basic Support (C64, VIC-20, PET, ...)"
+
+RZPM_DOC=""
+
+RZPM_INSTALL() {
+	mkdir -p build && cd build || exit 1
+	cmake -DRADARE2_INSTALL_PLUGDIR="${RZPM_PLUGDIR}" .. || exit 1
+	${MAKE} -j4 || exit 1
+	${MAKE} install || exit 1
+}
+
+RZPM_UNINSTALL() {
+	cd build || exit 1
+	cat install_manifest.txt | xargs rm -rv
+}
+
+RZPM_END

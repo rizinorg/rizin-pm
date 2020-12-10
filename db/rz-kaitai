@@ -1,0 +1,15 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[bin] rzkaitai command to list signatures and launch ksv"
+RZPM_DEPS ksv
+
+RZPM_INSTALL() {
+	ln -fs ${PWD}/kaitai/rzkaitai ${RZPM_BINDIR}/rzkaitai
+}
+
+RZPM_UNINSTALL() {
+	rm -f ${RZPM_BINDIR}/rzkaitai
+}
+
+RZPM_END

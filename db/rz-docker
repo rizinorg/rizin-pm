@@ -1,0 +1,21 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin"
+RZPM_DESC "[syspkg] rizin docker image on Ubuntu"
+
+RZPM_INSTALL() {
+	docker build -t rzdocker .
+	echo
+	echo "Run docker run -ti rzdocker"
+	echo
+	BIN="${RZPM_PREFIX}/bin/rzdocker"
+	echo '#!/bin/sh' > $BIN
+	echo 'docker run -ti rzdocker' >> $BIN
+	chmod +x $BIN
+}
+
+RZPM_UNINSTALL() {
+	docker rmi -f rzdocker
+}
+
+RZPM_END

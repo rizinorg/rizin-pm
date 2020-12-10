@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/thestr4ng3r/r2-os9.git"
-RZPM_DESC "[r2-bin] OS-9 module plugin for r2 bin"
+RZPM_GIT "https://github.com/thestr4ng3r/rz-os9.git"
+RZPM_DESC "[rz-bin] OS-9 module plugin for rz bin"
 
 RZPM_INSTALL() {
 	mkdir build

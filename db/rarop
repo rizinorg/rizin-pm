@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_GIT "https://github.com/jpenalbae/rarop"
-RZPM_DESC "[syspkg] Graphical ROP chain builder using radare2 and r2pipe"
+RZPM_DESC "[syspkg] Graphical ROP chain builder using rizin and rzpipe"
 
 RZPM_INSTALL() {
 	yarn || npm install || exit 1

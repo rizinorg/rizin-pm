@@ -1,0 +1,13 @@
+RZPM_BEGIN
+
+RZPM_DESC "[syspkg-rzpipe] rzpipe API for Go"
+
+RZPM_INSTALL() {
+	go get github.com/radare/rzpipe-go || exit 1
+	echo "rzpipe-go installed"
+}
+
+RZPM_UNINSTALL() {
+	go clean -i github.com/radare/rzpipe-go || exit 1
+	rm -rf "$GOPATH/src/github.com/radare/rzpipe-go"
+}

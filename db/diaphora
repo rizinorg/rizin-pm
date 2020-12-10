@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_GIT "https://github.com/radare/diaphora"
-RZPM_DESC "[r2] Diaphora binary diffing engine"
+RZPM_DESC "[rz] Diaphora binary diffing engine"
 
 RZPM_INSTALL() {
 	${MAKE} install PREFIX="${RZPM_PREFIX}"

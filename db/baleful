@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-extras"
-RZPM_DESC "[r2-arch] Baleful VM disassembler and analyzer"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-arch] Baleful VM disassembler and analyzer"
 
 RZPM_INSTALL() {
 #	export PKG_CONFIG_PATH="${RZPM_PREFIX}/lib/pkgconfig"

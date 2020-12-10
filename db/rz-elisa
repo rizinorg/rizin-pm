@@ -1,0 +1,20 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-bin] rzelisa - conversational rz shell"
+
+B="${RZPM_PREFIX}/bin/rzelisa"
+
+RZPM_INSTALL() {
+	cd rzelisa
+	npm i
+	echo "#!/bin/sh" > $B
+	echo "node $PWD/index.js" '$*' >> $B
+	chmod +x $B
+}
+
+RZPM_UNINSTALL() {
+	rm -f "${B}"
+}
+
+RZPM_END

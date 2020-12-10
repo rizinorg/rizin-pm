@@ -4,7 +4,7 @@ RZPM_GIT "https://github.com/conix-security/machoke"
 RZPM_DESC "[syspkg] CFG-based fuzzy hash for malware classification"
 
 RZPM_INSTALL() {
-    ${SUDO} pip3 install mmh3 r2pipe  
+    ${SUDO} pip3 install mmh3 rzpipe  
     mkdir -p ${RZPM_BINDIR}
     cp machoke.py "${RZPM_BINDIR}"/machoke
     chmod +x "${RZPM_BINDIR}"/machoke

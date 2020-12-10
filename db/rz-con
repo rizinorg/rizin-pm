@@ -1,0 +1,16 @@
+RZPM_BEGIN
+
+RZPM_DESC "[rzcon] The official rizin conference"
+RZCON_LINK="https://radare.org/con/"
+
+RZPM_INSTALL() {
+	xdg-open ${RZCON_LINK} > /dev/null 2>&1
+	[ $? != 0 ] && open ${RZCON_LINK} > /dev/null 2>&1
+}
+
+RZPM_UNINSTALL() {
+	# you cant uninstall rzcon
+	:
+}
+
+RZPM_END

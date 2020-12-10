@@ -1,17 +1,17 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/mrmacete/r2-ios-kernelcache"
-RZPM_DESC "[r2] kernelcache loader for radare2"
+RZPM_GIT "https://github.com/mrmacete/rz-ios-kernelcache"
+RZPM_DESC "[rz] kernelcache loader for rizin"
 
 RZPM_INSTALL() {
 	${MAKE} clean
 	${MAKE} || exit 1
-        export LIBEXT="`r2 -H LIBEXT`"
+        export LIBEXT="`rizin -H LIBEXT`"
 	cp -f bin_kernelcache.${LIBEXT} "${RZPM_PLUGDIR}" || exit 1
 }
 
 RZPM_UNINSTALL() {
-        export LIBEXT="`r2 -H LIBEXT`"
+        export LIBEXT="`rizin -H LIBEXT`"
 	rm -f "${RZPM_PLUGDIR}/bin_kernelcache.${LIBEXT}" || exit 1
 	${MAKE} uninstall
 }

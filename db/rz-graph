@@ -1,0 +1,16 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-graph] Recursive graphs (text, ascii-art, dot, webgl)"
+
+RZPM_DOC=""
+
+RZPM_INSTALL() {
+	cp -f rzgraph/rzxrefs.py "${RZPM_PLUGDIR}" || exit 1
+}
+
+RZPM_UNINSTALL() {
+	rm "${RZPM_PLUGDIR}/"rzxrefs.py
+}
+
+RZPM_END

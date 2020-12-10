@@ -1,0 +1,15 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/SiD3W4y/rzwakare"
+RZPM_DESC "[rz-wakare] Wakare trace integration for rizin"
+
+RZPM_INSTALL() {
+    ${MAKE}
+    ${MAKE} install
+}
+
+RZPM_UNINSTALL() {
+	${MAKE} uninstall
+}
+
+RZPM_END

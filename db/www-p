@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radare/radare2-webui"
-RZPM_DESC "[r2-www] The panel WebUI of /p"
+RZPM_GIT "https://github.com/radare/rizin-webui"
+RZPM_DESC "[rz-www] The panel WebUI of /p"
 
 MAKE_TARGET="release-panel"
 UI="p"

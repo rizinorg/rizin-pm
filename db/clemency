@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/MaskRay/r2cLEMENCy"
+RZPM_GIT "https://github.com/MaskRay/rzcLEMENCy"
 RZPM_DESC "[clemency] cLEMENCy architecture plugins"
 
 RZPM_INSTALL() {

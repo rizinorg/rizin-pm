@@ -15,7 +15,7 @@ RZPM_INSTALL() {
 		${RZPM_BINDIR}/kaitai-struct-compiler || exit 1
 	ln -fs ${PWD}/compiler/jvm/target/universal/stage/bin/kaitai-struct-compiler \
 		${RZPM_BINDIR}/kaitai-struct-compiler || exit 1
-	echo "kaitai-struct-compiler is now installed and available via r2pm -r"
+	echo "kaitai-struct-compiler is now installed and available via rzpm -r"
 }
 
 RZPM_UNINSTALL() {

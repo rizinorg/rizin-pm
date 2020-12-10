@@ -1,0 +1,22 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-bindings"
+RZPM_DESC "[rz-api] Native Python API bindings"
+
+RZPM_INSTALL() {
+	[ -z "${PYTHON}" ] && PYTHON=python
+	./configure --prefix="${PREFIX}" --enable=python || exit 1
+	${RZPM_SUDO} ${MAKE} install-vapi DESTDIR="${RZPM_DESTDIR}" || exit 1
+	cd python
+	${MAKE} clean
+	${MAKE} PYTHON="${PYTHON}"
+	${RZPM_SUDO} ${MAKE} install PYTHON="${PYTHON}" \
+		PYTHON_VERSION="${PYTHON_VERSION}" DESTDIR="${RZPM_DESTDIR}"
+}
+
+RZPM_UNINSTALL() {
+	cd python
+	${RZPM_SUDO} ${MAKE} uninstall
+}
+
+RZPM_END

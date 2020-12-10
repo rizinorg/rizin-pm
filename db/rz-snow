@@ -1,0 +1,17 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[decompiler] snowman decompiler integration with rizin"
+
+RZPM_INSTALL() {
+	cd rzsnowman || RZPM_FAIL "Cd"
+	${MAKE} || RZPM_FAIL "Build failed. You probably need 'brew install cartr/qt4/qt' and 'brew install boost' or 'sudo apt-get install libboost-dev libqt4-dev'"
+	${MAKE} install PREFIX=${RZPM_PREFIX} || RZPM_FAIL "Install"
+}
+
+RZPM_UNINSTALL() {
+	cd rzsnowman || RZPM_FAIL "Cd"
+	${MAKE} uninstall PREFIX=${RZPM_PREFIX} || RZPM_FAIL "UnInstall"
+}
+
+RZPM_END

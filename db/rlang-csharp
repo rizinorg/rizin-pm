@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-rlang"
-RZPM_DESC "[rlang] C# r2pipe/RLang bin/csharp-cs"
+RZPM_GIT "https://github.com/rizinorg/rizin-rlang"
+RZPM_DESC "[rlang] C# rzpipe/RLang bin/csharp-cs"
 
 RZPM_INSTALL() {
 	./configure --prefix="${RZPM_PREFIX}" || exit 1

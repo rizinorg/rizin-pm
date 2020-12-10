@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_DESC "[r2] Get info about windows functions"
+RZPM_DESC "[rz] Get info about windows functions"
 
 BINDIR="${RZPM_PLUGDIR}/../bin"
 

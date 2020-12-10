@@ -1,0 +1,21 @@
+RZPM_BEGIN
+
+RZPM_DESC "[rzpipe] rzpipe API for NodeJS"
+
+RZPM_INSTALL() {
+	if [ "${GLOBAL}" = 1 ]; then
+		${SUDO} npm install -g rzpipe
+	else
+		npm install rzpipe
+	fi
+}
+
+RZPM_UNINSTALL() {
+	if [ "${GLOBAL}" = 1 ]; then
+		${SUDO} npm uninstall -g rzpipe
+	else
+		npm uninstall rzpipe
+	fi
+}
+
+RZPM_END

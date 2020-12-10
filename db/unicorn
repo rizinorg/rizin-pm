@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-extras"
-RZPM_DESC "[r2-debug] Unicorn emulator plugin for radare2"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-debug] Unicorn emulator plugin for rizin"
 RZPM_DEPS unicorn-lib
 
 RZPM_INSTALL() {

@@ -1,0 +1,23 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rzdec-js"
+RZPM_DESC "[rz-plugin] rzdec core2 (do not use)"
+BINDIR="${RZPM_BINDIR}"
+
+RZPM_INSTALL() {
+	cd ..
+	[ ! -d rzdec2 ] && \
+		git clone --branch core2 https://github.com/rizinorg/rzdec-js rzdec2
+	cd rzdec2 || exit 1
+	git pull
+	${MAKE} clean
+	${MAKE} || exit 1
+	${MAKE} install || exit 1
+}
+
+RZPM_UNINSTALL() {
+	cd ../rzdec2
+	${MAKE} uninstall || exit 1
+}
+
+RZPM_END

@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-extras"
-RZPM_DESC "[r2-arch] X86 Udis86 Disassembler"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-arch] X86 Udis86 Disassembler"
 
 RZPM_INSTALL() {
 	./configure --prefix="${RZPM_PREFIX}" || exit 1

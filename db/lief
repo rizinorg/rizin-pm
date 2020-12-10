@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-extras"
-RZPM_DESC "[bin] LIEF bin plugins for r2"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[bin] LIEF bin plugins for rz"
 
 RZPM_INSTALL() {
 	cd lief && ${MAKE} && ${MAKE} install USER_PLUGINS="${RZPM_PLUGDIR}" || exit 1

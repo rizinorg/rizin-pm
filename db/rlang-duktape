@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-rlang"
+RZPM_GIT "https://github.com/rizinorg/rizin-rlang"
 RZPM_DESC "[rlang] Duktape JS RLang plugin #!duktape"
 
 RZPM_INSTALL() {

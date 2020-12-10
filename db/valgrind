@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_SVN svn://svn.valgrind.org/valgrind/trunk valgrind
-RZPM_DESC "[r2-arch] Keystone assembler plugins"
+RZPM_DESC "[rz-arch] Keystone assembler plugins"
 
 RZPM_INSTALL() {
 	${SHELL} autogen.sh || exit 1

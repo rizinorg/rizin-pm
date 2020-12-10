@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/mrmacete/r2-ggpack"
-RZPM_DESC "[r2-io] Read and edit ThimbleweedPark ggpack data files"
+RZPM_GIT "https://github.com/mrmacete/rz-ggpack"
+RZPM_DESC "[rz-io] Read and edit ThimbleweedPark ggpack data files"
 
 RZPM_INSTALL() {
 	mkdir -p "${RZPM_ETCD}" || exit 1

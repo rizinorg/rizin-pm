@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_GIT "https://github.com/wargio/libmc7"
-RZPM_DESC "[r2-plugin] Library to disassemble MC7 bytecode for Siemens PLC SIMATIC S7-300 and S7-400"
+RZPM_DESC "[rz-plugin] Library to disassemble MC7 bytecode for Siemens PLC SIMATIC S7-300 and S7-400"
 BINDIR="${RZPM_BINDIR}"
 
 RZPM_INSTALL() {

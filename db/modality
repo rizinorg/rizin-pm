@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_GIT "https://github.com/chase1635321/Modality"
-RZPM_DESC "[modality] Plugin to integrate angr with radare2"
+RZPM_DESC "[modality] Plugin to integrate angr with rizin"
 
 RZPM_INSTALL() {
 	${RZPM_SUDO} cp -f plugin.py "${RZPM_PLUGDIR}" || exit 1

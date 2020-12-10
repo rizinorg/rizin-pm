@@ -1,0 +1,17 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-arch] Load SVD description files into rz"
+
+RZPM_INSTALL() {
+	cd rzsvd || exit 1
+	${RZPM_SUDO} pip3 install cmsis_svd
+	${MAKE} install || exit 1
+}
+
+RZPM_UNINSTALL() {
+	cd rzsvd || exit 1
+	${MAKE} uninstall "${RZPM_PLUGDIR}" || exit 1
+}
+
+RZPM_END

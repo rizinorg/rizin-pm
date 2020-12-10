@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2-extras"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
 RZPM_DESC "[symbolic] Triton based RZ plugin for concolic execution and total control"
 
 PIMPDIR="${RZPM_PLUGDIR}/pimp"

@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_GIT "https://github.com/jpenalbae/chita"
-RZPM_DESC "[r2-r2pipe-node] Exploiting helper"
+RZPM_DESC "[rz-rzpipe-node] Exploiting helper"
 
 BINDIR="${RZPM_BINDIR}"
 

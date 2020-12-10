@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radareorg/radare2"
+RZPM_GIT "https://github.com/rizinorg/rizin"
 RZPM_DESC "[syspkg] Bokken GUI"
 
 RZPM_INSTALL() {

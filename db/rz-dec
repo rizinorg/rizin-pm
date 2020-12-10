@@ -1,0 +1,15 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rzdec-js" rzdec
+RZPM_DESC "[rz-plugin] Experimental Decompiler written in javascript on top of rz"
+BINDIR="${RZPM_BINDIR}"
+
+RZPM_INSTALL() {
+	CFLAGS="-DRZDEC_HOME=\\\"${RZPM_GITDIR}/rzdec\\\"" ${MAKE} -C p || exit 1
+}
+
+RZPM_UNINSTALL() {
+	${MAKE} -C p uninstall || exit 1
+}
+
+RZPM_END
