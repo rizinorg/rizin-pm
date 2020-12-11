@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/rizinorg/rizin-rlang"
+RZPM_GIT "https://github.com/rizinorg/rz-lang"
 RZPM_DESC "[rlang] Ruby RLang plugin #!python"
 
 RZPM_INSTALL() {
