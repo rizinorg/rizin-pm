@@ -10,12 +10,12 @@ RZPM_INSTALL() {
 	autoconf
 	automake --force-missing --add-missing
 	./configure --prefix="${RZPM_PREFIX}" || exit 1
-	make -j 4 || exit -1
-	make install || exit 1
+  ${MAKE} -j${RZPM_JOBS} || exit -1
+	${MAKE} install || exit 1
 }
 
 RZPM_UNINSTALL() {
-	make uninstall || exit 1
+	${MAKE} uninstall || exit 1
 }
 
 RZPM_END

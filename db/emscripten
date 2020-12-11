@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/juj/emsdk.git"
+RZPM_GIT "https://github.com/juj/emsdk"
 RZPM_DESC "[system] emscripten C/C++ compiler to asm.js/wasm"
 
 RZPM_INSTALL() {

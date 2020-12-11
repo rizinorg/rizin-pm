@@ -10,8 +10,9 @@ RZPM_INSTALL() {
 	cp *.${LIBEXT} "${RZPM_PLUGDIR}" || exit 1
 }
 
-RZPM_UNINSTALL() {
+RzPM_UNINSTALL() {
 	rm -f ${RZPM_PLUGDIR}/*bpf*
 }
 
 RZPM_END
+

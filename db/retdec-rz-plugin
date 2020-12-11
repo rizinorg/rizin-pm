@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/avast/retdec-rzplugin"
+RZPM_GIT "https://github.com/avast/retdec-r2plugin"
 RZPM_DESC "[rz-core] RetDec plugin"
 
 RZPM_DOC=""
@@ -20,7 +20,7 @@ RZPM_INSTALL() {
 		-DRADARE2_INSTALL_PLUGDIR="${RZPM_PLUGDIR}" \
 		-DBUILD_BUNDLED_RETDEC=ON \
 		-DRETDEC_INSTALL_PREFIX="${PWD}/install" || exit 1
-	${MAKE} -j$(fetch_nproc) install || exit 1
+	${MAKE} -j${RZPM_JOBS} install || exit 1
 }
 
 RZPM_UNINSTALL() {

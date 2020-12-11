@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radare/sdb"
+RZPM_GIT "https://github.com/rizinorg/sdb"
 RZPM_DESC "[syspkg] Simple/String DataBase"
 
 RZPM_INSTALL() {

@@ -9,7 +9,7 @@ RZPM_INSTALL() {
 		echo "Cannot install global dll yet"
 		exit 1
 	else
-		${MAKE} -j2 || exit 1
+		${MAKE} -j${RZPM_JOBS} || exit 1
 		cp rzpipe.dll "${WRKDIR}" || exit 1
 		echo "${WRKDIR}/rzpipe.dll"
 	fi

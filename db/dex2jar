@@ -4,9 +4,9 @@ RZPM_DESC "[app] dex2jar"
 
 RZPM_INSTALL() {
 	cd "${RZPM_USRDIR}/git"
-	wget -c https://github.com/pxb1988/dex2jar/releases/download/2.1-nightly-26/dex-tools-2.1-20150601.060031-26.zip
-	unzip dex-tools-2.1-20150601.060031-26.zip || exit 1
-	cd dex2jar-2.1-SNAPSHOT || exit 1
+	wget -c https://github.com/pxb1988/dex2jar/files/1867564/dex-tools-2.1-SNAPSHOT.zip
+	unzip dex-tools-2.1-SNAPSHOT || exit 1
+	cd dex-tools-2.1-SNAPSHOT || exit 1
 	mkdir -p "${RZPM_BINDIR}"
 	ln -fs "$PWD/d2j-dex2jar.sh" "${RZPM_BINDIR}/dex2jar" || exit 1
 	echo ln -fs "$PWD/d2j-dex2jar.sh" "${RZPM_BINDIR}/dex2jar"

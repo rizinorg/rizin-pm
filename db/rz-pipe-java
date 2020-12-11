@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_DESC "[rzpipe] rzpipe API for Java"
-RZPM_GIT "https://github.com/rizinorg/rizin-rzpipe"
+RZPM_GIT "https://github.com/rizinorg/rz-pipe"
 
 RZPM_INSTALL() {
 	cd java || exit 1

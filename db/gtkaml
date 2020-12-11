@@ -5,10 +5,10 @@ RZPM_DESC "[syspkg] GtkAml transpiler"
 
 RZPM_INSTALL() {
 	sh autogen.sh --prefix=/usr && \
-	$MAKE && \
-	sudo $MAKE install
+	${MAKE} && \
+	sudo ${MAKE} install
 }
 
 RZPM_UNINSTALL() {
-	sudo $MAKE uninstall
+	sudo ${MAKE} uninstall
 }

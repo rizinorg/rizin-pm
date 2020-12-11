@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/rizinorg/rizin-rzpipe"
+RZPM_GIT "https://github.com/rizinorg/rz-pipe"
 RZPM_DESC "[rzpipe] API for Vala and C-Glib"
 
 RZPM_INSTALL() {

@@ -5,7 +5,7 @@ RZPM_DESC "[syspkg] pen tcp port load balancer and bouncer"
 
 RZPM_INSTALL() {
 	./configure --prefix="${RZPM_PREFIX}"
-	${MAKE} -j4
+	${MAKE} -j${RZPM_JOBS}
 	${MAKE} install
 }
 

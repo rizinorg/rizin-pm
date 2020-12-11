@@ -1,6 +1,6 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/radare/diaphora"
+RZPM_GIT "https://github.com/joxeankoret/diaphora"
 RZPM_DESC "[rz] Diaphora binary diffing engine"
 
 RZPM_INSTALL() {

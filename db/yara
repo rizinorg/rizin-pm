@@ -11,7 +11,7 @@ RZPM_INSTALL() {
 	export CFLAGS="-fPIC"
 	./configure --disable-shared --enable-static \
 		--without-crypto --prefix="${RZPM_PREFIX}" || exit 1
-	${MAKE} -j12 || exit 1
+	${MAKE} -j${RZPM_JOBS} || exit 1
 	${RZPM_SUDO} ${MAKE} install
 	rm -f "${RZPM_PREFIX}/lib/"libyara*.dylib
 	rm -f "${RZPM_PREFIX}/lib/"libyara*.so

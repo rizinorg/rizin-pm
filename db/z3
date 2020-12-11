@@ -5,7 +5,7 @@ RZPM_DESC "[syspkg] The Z3 Theorem Prover"
 
 RZPM_INSTALL() {
 	./configure
-	cd build && $MAKE -j4
+	cd build && $MAKE -j${RZPM_JOBS}
 	cp build/z3 "${RZPM_BINDIR}/z3"
 }
 

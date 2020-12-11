@@ -5,9 +5,9 @@ RZPM_DESC "[rz-plugin] Library to disassemble MC7 bytecode for Siemens PLC SIMAT
 BINDIR="${RZPM_BINDIR}"
 
 RZPM_INSTALL() {
-        make all install || exit 1
+        ${MAKE} all install || exit 1
 }
 
 RZPM_UNINSTALL() {
-        make uninstall || exit 1
+        ${MAKE} uninstall || exit 1
 }

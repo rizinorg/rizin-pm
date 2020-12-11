@@ -6,7 +6,7 @@ RZPM_DESC "[rz-arch] Keystone assembler plugins"
 RZPM_INSTALL() {
 	${SHELL} autogen.sh || exit 1
 	./configure --prefix="${RZPM_PREFIX}" || exit 1
-	${MAKE} -j6 || exit 1
+	${MAKE} -j${RZPM_JOBS} || exit 1
 	${RZPM_SUDO} ${MAKE} install || exit 1
 }
 

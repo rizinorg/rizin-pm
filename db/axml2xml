@@ -2,7 +2,7 @@ RZPM_BEGIN
 
 RZPM_DESC "[app] axml2xml"
 
-SOURCE="https://raw.githubusercontent.com/trufae/axml2xml.rb/0de60154032341a9a2df3d81dafd0251e0226bbd/axml2xml.rb"
+SOURCE="https://raw.githubusercontent.com/thadd/axml2xml.rb/master/axml2xml.rb"
 B="${RZPM_BINDIR}"/axml2xml
 
 RZPM_INSTALL() {

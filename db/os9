@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/thestr4ng3r/rz-os9.git"
-RZPM_DESC "[rz-bin] OS-9 module plugin for rz bin"
+RZPM_GIT "https://github.com/thestr4ng3r/rz-os9"
+RZPM_DESC "[rz-bin] OS-9 module plugin for rizin bin"
 
 RZPM_INSTALL() {
 	mkdir build
@@ -9,7 +9,7 @@ RZPM_INSTALL() {
 	cmake -DPLUGINS_INSTALL_PATH="${RZPM_PLUGDIR}" .. || exit 1
 	mkdir -p "${RZPM_PLUGDIR}" || exit 1
 	${MAKE} clean
-	${MAKE} -j4 || exit 1
+	${MAKE} -j${RZPM_JOBS} || exit 1
 	${MAKE} install || exit 1 
 }
 

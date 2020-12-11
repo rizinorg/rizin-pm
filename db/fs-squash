@@ -10,7 +10,7 @@ RZPM_INSTALL() {
 }
 
 RZPM_UNINSTALL() {
-	cd `rz -H USER_PLUGINS` && rm -f fs_squash*
+	cd `rizin -H USER_PLUGINS` && rm -f fs_squash*
 }
 
 RZPM_END

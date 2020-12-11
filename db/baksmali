@@ -4,9 +4,9 @@ RZPM_DESC "[app] baksmali"
 
 RZPM_INSTALL() {
 	cd "${RZPM_USRDIR}/git"
-	wget -c https://bitbucket.org/JesusFreke/smali/downloads/baksmali-2.2.7.jar
+	wget -c https://bitbucket.org/JesusFreke/smali/downloads/baksmali-2.4.0.jar
 	mkdir -p "${RZPM_BINDIR}"
-	echo "java -jar ${RZPM_USRDIR}/git/"'baksmali-2.2.7.jar $@' > "${RZPM_BINDIR}/baksmali"
+	echo "java -jar ${RZPM_USRDIR}/git/"'baksmali-2.4.0.jar $@' > "${RZPM_BINDIR}/baksmali"
 	chmod +x "${RZPM_BINDIR}/baksmali"
 }
 

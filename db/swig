@@ -22,7 +22,7 @@ RZPM_INSTALL() {
 	else
 		sh autogen.sh || exit 1
 		./configure --prefix="${RZPM_PREFIX}" || exit 1
-		${MAKE} -j${MAKE_JOBS} || exit 1
+		${MAKE} -j${RZPM_JOBS} || exit 1
 		${MAKE} install || exit 1
 	fi
 }

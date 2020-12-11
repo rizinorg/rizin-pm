@@ -12,7 +12,7 @@ RZPM_INSTALL() {
 	elif cmake --version 2>&1 ; then
 		cmake .. -DCMAKE_PREFIX_PATH="$QT_PATH"
 	fi
-	${MAKE} -j6 || exit 1
+	${MAKE} -j${RZPM_JOBS} || exit 1
 	mkdir -p "${RZPM_PREFIX}/bin/" || exit 1
 	if [ "`uname`" = 'Darwin' ] ; then
 		SRC="${PWD}/cutter.app/Contents/MacOS/cutter"

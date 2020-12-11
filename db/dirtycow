@@ -1,7 +1,7 @@
 RZPM_BEGIN
 
 RZPM_GIT "https://github.com/nowsecure/dirtycow"
-RZPM_DESC "[rz-io] Linux's DirtyC0w exploit based IO plugin for rz"
+RZPM_DESC "[rz-io] Linux's DirtyC0w exploit based IO plugin for rizin"
 
 RZPM_INSTALL() {
 	${MAKE} || exit 1
