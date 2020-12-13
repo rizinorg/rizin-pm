@@ -1,13 +1,13 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_DESC "[bin] androguard"
+RZPM_DESC "[bin] androguard"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	${SUDO} pip install --upgrade androguard
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	${SUDO} pip uninstall androguard
 }
 
-R2PM_END
+RZPM_END

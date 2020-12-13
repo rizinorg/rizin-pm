@@ -1,0 +1,15 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/newlog/rzcom"
+RZPM_DESC "[rz-rzpipe-python] COM object identification. A comment specifying the COM object will be added before CoCreateInstance call"
+
+RZPM_INSTALL() {
+    mkdir -p "${RZPM_ETCD}" || exit 1
+    echo '$rzcom=#!pipe python '"'$(pwd)'"'/rzcom.py' > "${RZPM_ETCD}/rzcom" || exit 1
+}
+
+RZPM_UNINSTALL() {
+    rm -f "${RZPM_ETCD}"/rzcom
+}
+
+RZPM_END

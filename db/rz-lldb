@@ -1,0 +1,14 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/nowsecure/rzlldb"
+RZPM_DESC "[rzlldb] lldb as backend for rz"
+
+RZPM_INSTALL() {
+	${MAKE} install PYPATH="${RZPM_PYPATH}" PREFIX="${RZPM_PREFIX}" || exit 1
+}
+
+RZPM_UNINSTALL() {
+	${MAKE} uninstall PYPATH="${RZPM_PYPATH}" PREFIX="${RZPM_PREFIX}" || exit 1
+}
+
+RZPM_END

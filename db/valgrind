@@ -1,17 +1,17 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_SVN svn://svn.valgrind.org/valgrind/trunk valgrind
-R2PM_DESC "[r2-arch] Keystone assembler plugins"
+RZPM_SVN svn://svn.valgrind.org/valgrind/trunk valgrind
+RZPM_DESC "[rz-arch] Keystone assembler plugins"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	${SHELL} autogen.sh || exit 1
-	./configure --prefix="${R2PM_PREFIX}" || exit 1
-	${MAKE} -j6 || exit 1
-	${R2PM_SUDO} ${MAKE} install || exit 1
+	./configure --prefix="${RZPM_PREFIX}" || exit 1
+	${MAKE} -j${RZPM_JOBS} || exit 1
+	${RZPM_SUDO} ${MAKE} install || exit 1
 }
 
-R2PM_UNINSTALL() {
-	${R2PM_SUDO} ${MAKE} uninstall
+RZPM_UNINSTALL() {
+	${RZPM_SUDO} ${MAKE} uninstall
 }
 
-R2PM_END
+RZPM_END

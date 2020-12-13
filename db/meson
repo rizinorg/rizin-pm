@@ -1,14 +1,14 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_DESC "[syspkg] meson build configuration for ninja"
-R2PM_DEPS ninja
+RZPM_DESC "[syspkg] meson build configuration for ninja"
+RZPM_DEPS ninja
 
-R2PM_INSTALL() {
-	${R2PM_SUDO} pip3 install -U meson
+RZPM_INSTALL() {
+	${RZPM_SUDO} pip3 install -U meson
 }
 
-R2PM_UNINSTALL() {
-	${R2PM_SUDO} pip3 uninstall meson
+RZPM_UNINSTALL() {
+	${RZPM_SUDO} pip3 uninstall meson
 }
 
-R2PM_END
+RZPM_END

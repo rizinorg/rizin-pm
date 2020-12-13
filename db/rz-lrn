@@ -1,0 +1,14 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/0ki/rzlrn"
+RZPM_DESC "[rzlearn] Learning game for rizin"
+
+RZPM_INSTALL() {
+	ln -fs "`pwd`/bash/rzlrn.sh" ${RZPM_PREFIX}/bin/rzlrn
+}
+
+RZPM_UNINSTALL() {
+	rm -f ${RZPM_PREFIX}/bin/rzlrn
+}
+
+RZPM_END

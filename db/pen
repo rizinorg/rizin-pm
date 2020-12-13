@@ -1,16 +1,16 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_TGZ "http://siag.nu/pub/pen/pen-0.34.1.tar.gz"
-R2PM_DESC "[syspkg] pen tcp port load balancer and bouncer"
+RZPM_TGZ "http://siag.nu/pub/pen/pen-0.34.1.tar.gz"
+RZPM_DESC "[syspkg] pen tcp port load balancer and bouncer"
 
-R2PM_INSTALL() {
-	./configure --prefix="${R2PM_PREFIX}"
-	${MAKE} -j4
+RZPM_INSTALL() {
+	./configure --prefix="${RZPM_PREFIX}"
+	${MAKE} -j${RZPM_JOBS}
 	${MAKE} install
 }
 
-R2PM_UNINSTALL() {
+RZPM_UNINSTALL() {
 	${MAKE} uninstall
 }
 
-R2PM_END
+RZPM_END

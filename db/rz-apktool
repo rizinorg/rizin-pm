@@ -1,0 +1,17 @@
+RZPM_BEGIN
+
+RZPM_DESC "[rz-rzpipe-python] APK decompiler alternative to apktool"
+
+RZPM_INSTALL() {
+	rm "${RZPM_USRDIR}/git/rzapktool"
+	wget -c https://raw.githubusercontent.com/h4ng3r/rzapktool/master/rzapktool.py \ 
+		-O ${RZPM_BINDIR}/rzapktool
+	chmod +x ${RZPM_BINDIR}/rzapktool
+}
+
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_BINDIR}"/rzapktool
+}
+
+RZPM_END
+

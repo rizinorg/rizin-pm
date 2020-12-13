@@ -1,0 +1,13 @@
+RZPM_BEGIN
+
+RZPM_DESC "[syspkg-rzpipe] rzpipe API for Python"
+
+RZPM_INSTALL() {
+	pip install -U rzpipe
+}
+
+RZPM_UNINSTALL() {
+	pip uninstall rzpipe
+}
+
+RZPM_END

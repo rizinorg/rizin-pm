@@ -1,0 +1,22 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin"
+RZPM_DESC "[pkg] rizin symstall"
+
+RZPM_INSTALL() {
+	if [ "${GLOBAL}" = 1 ]; then
+		sys/install.sh
+	else
+		sys/install.sh ${RZPM_PREFIX}
+	fi
+}
+
+RZPM_UNINSTALL() {
+	if [ "${GLOBAL}" = 1 ]; then
+		sys/uninstall.sh
+	else
+		sys/uninstall.sh "${RZPM_PREFIX}"
+	fi
+}
+
+RZPM_END

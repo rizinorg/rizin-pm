@@ -1,0 +1,18 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[decompiler] Jadx plugin for rizin"
+RZPM_DEPS jadx
+
+RZPM_INSTALL() {
+	cd rzjadx || exit 1
+	rm -rf node_modules
+	${MAKE} || exit 1
+	${MAKE} install || exit 1
+}
+
+RZPM_UNINSTALL() {
+	${MAKE} uninstall || exit 1
+}
+
+RZPM_END

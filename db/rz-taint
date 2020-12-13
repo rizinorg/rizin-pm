@@ -1,0 +1,16 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-taint] Static taint analysis (now only x86,x64)"
+
+RZPM_DOC=""
+
+RZPM_INSTALL() {
+	cp -f rztaint/taint.py "${RZPM_BINDIR}" || exit 1
+}
+
+RZPM_UNINSTALL() {
+	rm "${RZPM_BINDIR}/"taint.py
+}
+
+RZPM_END

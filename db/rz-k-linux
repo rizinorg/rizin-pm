@@ -1,0 +1,39 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-io] rzk Linux kernel module"
+
+RZPM_DOC="
+You should now be able to run:
+
+  $ sudo modprobe rzkmod
+
+WARNING: This module allows ANY user to read/write physical memory
+WARNING: Dont use it if you dont know what you are doing
+"
+
+RZPM_INSTALL() {
+	cd rzk/linux
+	${MAKE} || RZPM_FAIL "Build"
+	#gzip -f rzkmod.ko || RZPM_FAIL "GZIP error"
+	if [ "${GLOBAL}" = 1 ]; then
+		#${MAKE} install || RZPM_FAIL "Install"
+		sudo mkdir -p /lib/modules/$(uname -r)/kernel/drivers/misc/ || RZPM_FAIL "Cannot create install dir"
+		#sudo cp -f rzkmod.ko.gz /lib/modules/$(uname -r)/kernel/drivers/misc/ || RZPM_FAIL "Permission denied"
+		sudo cp -f rzkmod.ko /lib/modules/$(uname -r)/kernel/drivers/misc/ || RZPM_FAIL "Permission denied"
+		sudo depmod -a
+		rzpm_doc rzk-linux
+	else
+		sudo insmod rzkmod.ko || RZPM_FAIL "Cannot install kernel module"
+	fi
+}
+
+RZPM_UNINSTALL() {
+	if [ "${GLOBAL}" = 1 ]; then
+		sudo rm -f /lib/modules/$(uname -r)/kernel/drivers/misc/rzk*.ko*
+	fi
+	sudo rmmod rzkmod
+	#${MAKE} uninstall
+}
+
+RZPM_END

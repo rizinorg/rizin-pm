@@ -1,0 +1,17 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "Lua 5.3 disassembler, analyzer and bin parser plugins for rizin"
+
+RZPM_INSTALL() {
+	cd lua53 || RZPM_FAIL "Cd"
+	${MAKE} || RZPM_FAIL "Build failed"
+	${MAKE} install LIBR_PLUGINS=${RZPM_PLUGDIR} || RZPM_FAIL "Install"
+}
+
+RZPM_UNINSTALL() {
+	cd lua53 || RZPM_FAIL "Cd"
+	${MAKE} uninstall LIBR_PLUGINS=${RZPM_PLUGDIR} || RZPM_FAIL "UnInstall"
+}
+
+RZPM_END

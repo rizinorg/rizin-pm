@@ -1,16 +1,16 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/Z3Prover/z3"
-R2PM_DESC "[syspkg] The Z3 Theorem Prover"
+RZPM_GIT "https://github.com/Z3Prover/z3"
+RZPM_DESC "[syspkg] The Z3 Theorem Prover"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	./configure
-	cd build && $MAKE -j4
-	cp build/z3 "${R2PM_BINDIR}/z3"
+	cd build && $MAKE -j${RZPM_JOBS}
+	cp build/z3 "${RZPM_BINDIR}/z3"
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_BINDIR}"/z3
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_BINDIR}"/z3
 }
 
-R2PM_END
+RZPM_END

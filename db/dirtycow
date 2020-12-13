@@ -1,15 +1,15 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/nowsecure/dirtycow"
-R2PM_DESC "[r2-io] Linux's DirtyC0w exploit based IO plugin for r2"
+RZPM_GIT "https://github.com/nowsecure/dirtycow"
+RZPM_DESC "[rz-io] Linux's DirtyC0w exploit based IO plugin for rizin"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	${MAKE} || exit 1
-	cp -f io_dirtycow.so "${R2PM_PLUGDIR}"/io_dirtycow.${LIBEXT} || exit 1
+	cp -f io_dirtycow.so "${RZPM_PLUGDIR}"/io_dirtycow.${LIBEXT} || exit 1
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_PLUGDIR}/io_dirtycow."*
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_PLUGDIR}/io_dirtycow."*
 }
 
-R2PM_END
+RZPM_END

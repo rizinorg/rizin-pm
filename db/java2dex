@@ -1,11 +1,11 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_DESC "[syspkg] java2dex"
+RZPM_DESC "[syspkg] java2dex"
 
-R2PM_INSTALL() {
-	mkdir -p "${R2PM_BINDIR}"
+RZPM_INSTALL() {
+	mkdir -p "${RZPM_BINDIR}"
 S="$"
-cat > ${R2PM_BINDIR}/java2dex << EOF
+cat > ${RZPM_BINDIR}/java2dex << EOF
 #!/bin/sh
 echo FILES="${S}*"
 JAR="${S}(echo "${S}1" | sed -e 's,\.java,.jar,g')"
@@ -17,8 +17,8 @@ exec dx --dex --output=classes.dex ${S}{JAR}
 EOF
 }
 
-R2PM_UNINSTALL() {
-	rm "${R2PM_BINDIR}"/java2dex
+RZPM_UNINSTALL() {
+	rm "${RZPM_BINDIR}"/java2dex
 }
 
-R2PM_END
+RZPM_END

@@ -1,0 +1,16 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/0ki/rzlrn"
+RZPM_DESC "[rzlearn] Golf plugin to learn rz commands"
+
+RZPM_INSTALL() {
+	cd _other/golf-plugin
+	$MAKE ; $MAKE install
+}
+
+RZPM_UNINSTALL() {
+	cd _other/golf-plugin
+	$MAKE ; $MAKE uninstall
+}
+
+RZPM_END

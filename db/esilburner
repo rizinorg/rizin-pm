@@ -1,16 +1,16 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/mrmacete/r2scripts"
-R2PM_DESC "[r2-r2pipe-python] Burn asm.emu results in real comments (MIPS oriented)"
+RZPM_GIT "https://github.com/mrmacete/r2scripts"
+RZPM_DESC "[rzpipe-python] Burn asm.emu results in real comments (MIPS oriented)"
 
-R2PM_INSTALL() {
-	mkdir -p "${R2PM_ETCD}" || exit 1
+RZPM_INSTALL() {
+	mkdir -p "${RZPM_ETCD}" || exit 1
 	cd esilburner || exit 1
-	echo '$esilburner=#!pipe python '"'$(pwd)'"'/esilburner.py' > "${R2PM_ETCD}/esilburner" || exit 1
+	echo '$esilburner=#!pipe python '"'$(pwd)'"'/esilburner.py' > "${RZPM_ETCD}/esilburner" || exit 1
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_ETCD}"/esilburner
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_ETCD}"/esilburner
 }
 
-R2PM_END
+RZPM_END

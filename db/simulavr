@@ -1,21 +1,21 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT https://github.com/Traumflug/simulavr
-R2PM_DESC "[syspkg] simulavr - avr simulator with gdb server"
+RZPM_GIT https://github.com/Traumflug/simulavr
+RZPM_DESC "[syspkg] simulavr - avr simulator with gdb server"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	glibtoolize --force 2> /dev/null || libtoolize --force
 	autoheader
 	aclocal --install
 	autoconf
 	automake --force-missing --add-missing
-	./configure --prefix="${R2PM_PREFIX}" || exit 1
-	make -j 4 || exit -1
-	make install || exit 1
+	./configure --prefix="${RZPM_PREFIX}" || exit 1
+  ${MAKE} -j${RZPM_JOBS} || exit -1
+	${MAKE} install || exit 1
 }
 
-R2PM_UNINSTALL() {
-	make uninstall || exit 1
+RZPM_UNINSTALL() {
+	${MAKE} uninstall || exit 1
 }
 
-R2PM_END
+RZPM_END

@@ -1,20 +1,20 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/radareorg/radare2-extras"
-R2PM_DESC "[r2-arch] Tiny ARM Thumb disassembler"
+RZPM_GIT "https://github.com/rizinorg/rizin-extras"
+RZPM_DESC "[rz-arch] Tiny ARM Thumb disassembler"
 
-R2PM_INSTALL() {
-	./configure --prefix="${R2PM_PREFIX}" || exit 1
+RZPM_INSTALL() {
+	./configure --prefix="${RZPM_PREFIX}" || exit 1
 	cd libr/asm/p
 	${MAKE} clean
 ls
 	${MAKE} asm_armthumb.${LIBEXT} || exit 1
-	cp -f asm_armthumb.${LIBEXT} "${R2PM_PLUGDIR}" || exit 1
-	echo "cp -f asm_armthumb.${LIBEXT} ${R2PM_PLUGDIR}"
+	cp -f asm_armthumb.${LIBEXT} "${RZPM_PLUGDIR}" || exit 1
+	echo "cp -f asm_armthumb.${LIBEXT} ${RZPM_PLUGDIR}"
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_PLUGDIR}/asm_armthumb".*
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_PLUGDIR}/asm_armthumb".*
 }
 
-R2PM_END
+RZPM_END

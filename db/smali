@@ -1,17 +1,17 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_DESC "[app] smali"
+RZPM_DESC "[app] smali"
 
-R2PM_INSTALL() {
-	cd "${R2PM_USRDIR}/git"
+RZPM_INSTALL() {
+	cd "${RZPM_USRDIR}/git"
 	wget -c https://bitbucket.org/JesusFreke/smali/downloads/smali-2.2.7.jar
-	mkdir -p "${R2PM_BINDIR}"
-	echo "java -jar ${R2PM_USRDIR}/git/"'smali-2.2.7.jar $@' > "${R2PM_BINDIR}/smali"
-	chmod +x "${R2PM_BINDIR}/smali"
+	mkdir -p "${RZPM_BINDIR}"
+	echo "java -jar ${RZPM_USRDIR}/git/"'smali-2.2.7.jar $@' > "${RZPM_BINDIR}/smali"
+	chmod +x "${RZPM_BINDIR}/smali"
 }
 
-R2PM_UNINSTALL() {
-	rm "${R2PM_BINDIR}"/smali
+RZPM_UNINSTALL() {
+	rm "${RZPM_BINDIR}"/smali
 }
 
-R2PM_END
+RZPM_END

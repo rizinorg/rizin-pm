@@ -1,12 +1,12 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/gast04/r4ge"
-R2PM_DESC "[r2-angr] R4GE is another r2-angr plugin"
+RZPM_GIT "https://github.com/gast04/r4ge"
+RZPM_DESC "[rz-angr] R4GE is another rz-angr plugin"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	pip install -r requirements.txt
 S="$"
-	echo << EOF > ${R2PM_BINDIR}/r4ge
+	echo << EOF > ${RZPM_BINDIR}/r4ge
 #!/bin/sh
 R4GEPATH=$(pwd)
 [ -z "${S}PYTHON" ] && PYTHON=python
@@ -17,11 +17,11 @@ if [ -z "${S}1" ]; then
 fi
 exec ${S}{PYTHON} $(pwd)/$1.py $*
 EOF
-	chmod +x ${R2PM_BINDIR}/r4ge
+	chmod +x ${RZPM_BINDIR}/r4ge
 }
 
-R2PM_UNINSTALL() {
-	rm -f "${R2PM_BINDIR}/"r4ge
+RZPM_UNINSTALL() {
+	rm -f "${RZPM_BINDIR}/"r4ge
 }
 
-R2PM_END
+RZPM_END

@@ -1,0 +1,22 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/jpenalbae/rz-scripts"
+RZPM_DESC "[rz-rzpipe-node] RetDec Decompiler script"
+
+BINDIR="${RZPM_BINDIR}"
+
+RZPM_INSTALL() {
+	cd decompiler
+	node --version || exit 1
+	npm install || exit 1
+	mkdir -p "${RZPM_BINDIR}" || exit 1
+	echo '#!/bin/sh' > "${RZPM_BINDIR}/retdec" || exit 1
+	echo "exec node '`pwd`'"'/decompile.js $*' >> "${RZPM_BINDIR}/retdec" || exit 1
+	chmod +x "${RZPM_BINDIR}"/retdec || exit 1
+}
+
+RZPM_UNINSTALL() {
+	rm -f "${BINDIR}"/retdec
+}
+
+RZPM_END

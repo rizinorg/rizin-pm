@@ -1,0 +1,14 @@
+RZPM_BEGIN
+
+RZPM_DESC "[rzpipe] rzpipe API for Java"
+RZPM_GIT "https://github.com/rizinorg/rz-pipe"
+
+RZPM_INSTALL() {
+	cd java || exit 1
+	${MAKE} || exit 1
+	cp -f rzpipe.jar "${RZPM_OLDPWD}" || exit 1
+}
+
+RZPM_UNINSTALL() {} # nothing to do here
+
+RZPM_END

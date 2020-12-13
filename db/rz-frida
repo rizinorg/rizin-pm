@@ -1,0 +1,39 @@
+RZPM_BEGIN
+
+RZPM_GIT "https://github.com/nowsecure/rzfrida"
+RZPM_DESC "[rz-io] rzfrida:// IO plugin (env RZFRIDA_CYLANG=0|1)"
+
+RZPM_DOC="
+rzfrida is an IO plugin for rz that talks with Frida.
+This allows to interact with local and remote processes.
+
+$ rizin frida:///bin/ls
+[0x00000000]> \i*
+e asm.arch=x86
+e asm.bits=64
+e asm.os=darwin
+
+You can also connect to Android/iOS gadgets or servers:
+
+$ rizin frida://{device-id}/{application-name|process-id}
+
+Note that \ is an alias for =! to run commands in the io plugin instead of host
+"
+
+if [ -z "${RZFRIDA_CYLANG}" ]; then
+	RZFRIDA_CYLANG=0
+fi
+
+RZPM_INSTALL() {
+	unset CFLAGS
+	unset LDFLAGS
+	# ${MAKE} update || RZPM_FAIL "Cannot update"
+	${MAKE} WITH_CYLANG=${RZFRIDA_CYLANG} || RZPM_FAIL "Build failed"
+	${MAKE} WITH_CYLANG=${RZFRIDA_CYLANG} install RZ_PLUGDIR="${RZPM_PLUGDIR}" || RZPM_FAIL "Install fail"
+}
+
+RZPM_UNINSTALL() {
+	${MAKE} uninstall RZ_PLUGDIR="${RZPM_PLUGDIR}" || exit 1
+}
+
+RZPM_END

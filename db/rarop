@@ -1,15 +1,15 @@
-R2PM_BEGIN
+RZPM_BEGIN
 
-R2PM_GIT "https://github.com/jpenalbae/rarop"
-R2PM_DESC "[syspkg] Graphical ROP chain builder using radare2 and r2pipe"
+RZPM_GIT "https://github.com/jpenalbae/rarop"
+RZPM_DESC "[syspkg] Graphical ROP chain builder using rizin and rzpipe"
 
-R2PM_INSTALL() {
+RZPM_INSTALL() {
 	yarn || npm install || exit 1
-	ln -fs ${PWD}/bin/rarop ${R2PM_BINDIR}/rarop || exit 1
+	ln -fs ${PWD}/bin/rarop ${RZPM_BINDIR}/rarop || exit 1
 }
 
-R2PM_UNINSTALL() {
-	rm -f ${R2PM_BINDIR}/rarop
+RZPM_UNINSTALL() {
+	rm -f ${RZPM_BINDIR}/rarop
 }
 
-R2PM_END
+RZPM_END
