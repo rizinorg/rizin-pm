@@ -4,18 +4,18 @@ RZPM_GIT "https://github.com/rizinorg/rizin-extras"
 RZPM_DESC "[rizin-arch] Keystone assembler plugins"
 
 RZPM_INSTALL() {
-#	export PKG_CONFIG_PATH="${RZPM_PREFIX}/lib/pkgconfig"
 	cd keystone || exit 1
-	export LDFLAGS="${LDFLAGS} -L/usr/local/lib"
-	./configure --prefix="${RZPM_PREFIX}" || exit 1
-	${MAKE} clean
-	${MAKE} || exit 1
-	${MAKE} install RZPM_PLUGDIR="${RZPM_PLUGDIR}" || exit 1
+	rm -rf build
+	meson --prefix="${RZPM_PREFIX}" build || exit 1
+	ninja -C build || exit 1
+	ninja -C build install || exit 1
 }
 
 RZPM_UNINSTALL() {
 	cd keystone || exit 1
-	${MAKE} uninstall RZPM_PLUGDIR="${RZPM_PLUGDIR}"
+	rm -rf build
+	meson --prefix="${RZPM_PREFIX}" build || exit 1
+	ninja -C build uninstall || exit 1
 }
 
 RZPM_END
