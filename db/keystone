@@ -13,8 +13,6 @@ RZPM_INSTALL() {
 
 RZPM_UNINSTALL() {
 	cd keystone || exit 1
-	rm -rf build
-	meson --prefix="${RZPM_PREFIX}" build || exit 1
 	ninja -C build uninstall || exit 1
 }
 
