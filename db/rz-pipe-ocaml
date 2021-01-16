@@ -1,14 +1,14 @@
 RZPM_BEGIN
 
-RZPM_GIT "https://github.com/fxfactorial/ocaml-rizin"
+RZPM_GIT "https://github.com/rizinorg/rz-pipe"
 RZPM_DESC "[rzpipe] rzpipe API for OCaml"
 
 RZPM_INSTALL() {
-	opam install rizin
+	cd ocaml && opam install .
 }
 
 RZPM_UNINSTALL() {
-	opam uninstall rizin
+	opam uninstall rz-pipe
 }
 
 RZPM_END
